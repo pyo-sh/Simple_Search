@@ -70,13 +70,13 @@ export const setChangeState = (btn) => {
             recognition.stop();
             console.dir(btn)
             btn.innerText = "Start";
-            btn.className = "record_stop";
+            btn.className = "record_button record_stop";
         }
         else {
             isRunning = true;
             recognition.start();
             btn.innerText = "Stop";
-            btn.className = "record_start";
+            btn.className = "record_button record_start";
         }
     });
 }

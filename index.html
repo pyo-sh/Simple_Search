@@ -8,13 +8,21 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <button id="recogBtn" class="record_stop">Start</button>
-        <label class="switch">
-            <input id="toggleBtn" type="checkbox">
-            <span class="slider round"></span>
-        </label>
-        <div id="check">
+        <div class="wrapper">
+            <section class="control">
+                <h2 class="title">음성 검색 기능</h2>
+                <p class="switch_des">연속 검색 : </p>
+                <label class="switch">
+                    <input id="toggleBtn" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <button id="recogBtn" class="record_stop record_button">Start</button>
+            </section>
+            <p class="how_1">음성 내용</p>
+            <div id="check" class="voice">
 
+            </div>
+            <p class="how_2">마지막에 '검색'을 말하면 해당 단어를 검색합니다.</p>
         </div>
         <script type="module" src="index.js"></script>
         <script type="module" src="speechRecognition.js"></script>
