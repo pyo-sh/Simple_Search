@@ -1,13 +1,14 @@
+// Start 버튼 Event 설정
 import { setChangeState } from './speechRecognition.js';
-
 const recordBtn = document.querySelector('#recogBtn');
 setChangeState(recordBtn);
 
-let isContinue = false
-// Toggle Button
+// Toggle 버튼 Event 설정
+import { getIsContinue, changeIsContinue } from './controller.js';
 const check = document.querySelector('#toggleBtn');
-check.addEventListener('click', () => { isContinue = !isContinue; });
+check.addEventListener('click', changeIsContinue);
 
+// OutputText가 왔을 때의 EventListener
 const checkDiv = document.querySelector('#check');
 export let outPutText = {
     get text() {
@@ -21,7 +22,7 @@ export let outPutText = {
             checkDiv.innerHTML = txt
 
             const link = 'https://www.google.com/search?q=' + txt;
-            if (isContinue) {
+            if (getIsContinue()) {
                 window.open(link);
             }
             else {
